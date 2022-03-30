@@ -37,7 +37,7 @@ const ProductTabs = () => {
                 </TabPanel>
                 <TabPanel value="2"> <p className='text-sm font-normal text-black leading-normal '>DELIVERY</p></TabPanel>
                 <TabPanel value="3"> <p className='text-sm font-normal text-black leading-normal '>FIT</p></TabPanel>
-                <TabPanel value="4"> <p className='text-sm font-normal text-black leading-normal '>SHARE</p></TabPanel>
+                {/* <TabPanel value="4"> <p className='text-sm font-normal text-black leading-normal '>SHARE</p></TabPanel> */}
             </TabContext>
         </Box>
     )
