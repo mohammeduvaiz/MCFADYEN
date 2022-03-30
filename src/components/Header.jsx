@@ -18,7 +18,7 @@ const Header = () => {
   ];
   return (
     <>
-      <nav className='sticky w-full flex h-[80px]  items-center px-4 bg-white top-0 z-50  justify-between'>
+      <nav className='fixed w-full flex h-[60px]  items-center px-4 bg-white top-0 z-50  justify-between'>
         {/* Logo and Brand name */}
         <div>
           <h1 className='text-black w-[185px] font-normal text-xl' >
@@ -40,7 +40,7 @@ const Header = () => {
           className={
             !nav
               ? 'hidden'
-              : 'absolute top-0 left-0 w-full h-[80vh] bg-[#fff] flex flex-col justify-center items-center'
+              : 'absolute top-0 left-0 w-full h-[100vh] bg-[#fff] flex flex-col justify-center items-center'
           }
         >
           {MenuItems.map(menu => (

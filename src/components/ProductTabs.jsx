@@ -11,14 +11,14 @@ const ProductTabs = () => {
         setValue(newValue);
     };
     return (
-        <Box sx={{ marginLeft: '10px', width: '32%', typography: 'body1' }} className='hidden md:block sticky'>
+        <Box sx={{ marginLeft: '10px', width: '25%', typography: 'body1' }} className='hidden md:block min-h-screen fixed'>
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 0, borderColor: 'divider' }}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example">
+                    <TabList onChange={handleChange} indicatorColor="white" textColor="inherit">
                         <Tab label="DETAILS" value="1" />
                         <Tab label="DELIVERY" value="2" />
                         <Tab label="FIT" value="3" />
-                        <Tab label="SHARE" value="4" />
+                        {/* <Tab label="SHARE" value="4" /> */}
                     </TabList>
                 </Box>
                 <TabPanel value="1">
