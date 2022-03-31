@@ -12,7 +12,7 @@ const ProductCardComp = ({ detail, addToCart }) => {
     const [size, setSize] = React.useState(sizes[0])
 
     return (
-        <div className='flex flex-col ml-auto mr-auto p-3 min-h-screen md:w-[25%]  md:fixed right-0 '>
+        <div className='flex flex-col ml-auto mr-auto p-3 min-h-screen md:w-[25%]  md:fixed right-0 top-12'>
             {/* product name and description */}
             <div className='w-[288px] h-[92px] static'>
                 <h2 className='uppercase text-black text-5xl font-normal tracking-tighter'>JONATHAN SIMKHAI</h2>
@@ -23,13 +23,15 @@ const ProductCardComp = ({ detail, addToCart }) => {
             </div>
             {/* product color and product image */}
             <div className='flex-col py-2'>
-                <p className='uppercase font-bold text-sm text-black'>Color <span className='text-gray-700 uppercase text-sm font-normal leading-none'>Conchiglia</span></p>
-                <div className='flex p-1 gap-3'>
-                    <div className=''>
-                        <img src={detail.urls.thumb} className='w-[130px] h-[120px] ' />
+                <div>
+                    <p className='uppercase font-bold text-sm text-black'>Color <span className='text-gray-700 uppercase text-sm font-normal leading-none'>Conchiglia</span></p>
+                </div>
+                <div className='flex p-1 gap-3 '>
+                    <div>
+                        <img src={detail.urls.thumb} className='h-[110px] w-[130px] border-2 border-black rounded-lg' />
                     </div>
-                    <div className=''>
-                        <img src={detail.urls.thumb} className='w-[100px] h-[100px] ' />
+                    <div>
+                        <img src={detail.urls.thumb} className='rounded-lg h-[100px]' />
                     </div>
                 </div>
             </div>
@@ -59,7 +61,6 @@ const ProductCardComp = ({ detail, addToCart }) => {
             <div className='md:hidden '>
                 <ProductNote />
             </div>
-            {/* <ProductNote /> */}
         </div>
     )
 }

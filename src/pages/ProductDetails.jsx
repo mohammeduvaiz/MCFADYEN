@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard'
 import ProductImage from '../components/ProductImage'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductDetails } from '../slice/product'
-import ProductNote from '../components/ProductNote'
+
 const ProductDetailsComp = ({ addToCart }) => {
   const { productDetails } = useSelector((state) => state.product)
   const detail = productDetails[0];
