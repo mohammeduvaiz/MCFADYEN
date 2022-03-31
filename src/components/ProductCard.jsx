@@ -28,10 +28,10 @@ const ProductCardComp = ({ detail, addToCart }) => {
                 </div>
                 <div className='flex p-1 gap-3 '>
                     <div>
-                        <img src={detail.urls.thumb} className='h-[110px] w-[130px] border-2 border-black rounded-lg' />
+                        <img src={detail.urls.thumb} className='h-[110px] w-[130px] border-2 border-black rounded-lg' alt="thumb" />
                     </div>
                     <div>
-                        <img src={detail.urls.thumb} className='rounded-lg h-[100px]' />
+                        <img src={detail.urls.thumb} className='rounded-lg h-[100px]' alt="thumb" />
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@ const ProductCardComp = ({ detail, addToCart }) => {
                 </div>
                 <div className='mt-1  py-2'>
                     {sizes.map((item, index) => (
-                        <button onClick={() => setSize(item)} key={index} className={`${item.id == size.id && 'bg-black text-white'} w-[70px] h-[30px] bg-white text-black rounded-xl border-solid border-2 border-black-200 `}>
+                        <button onClick={() => setSize(item)} key={index} className={`${item.id === size.id && 'bg-black text-white'} w-[70px] h-[30px] bg-white text-black rounded-xl border-solid border-2 border-black-200 `}>
                             {item.name}
                         </button>
                     ))}

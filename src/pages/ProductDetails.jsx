@@ -12,7 +12,7 @@ const ProductDetailsComp = ({ addToCart }) => {
 
   useEffect(() => {
     dispatch(getProductDetails())
-  }, [])
+  }, [dispatch])
 
   if (!detail) {
     return (

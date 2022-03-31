@@ -14,20 +14,20 @@ const ProductImageComp = ({ detail }) => {
         <div className='hidden p-3 w-[50%] md:flex flex-col flex-1 left-[300px] relative items-center'>
             <div>
                 <img src={detail.urls.regular}
-                    alt="name"
+                    alt="product"
                     loading='lazy'
                 />
             </div>
             <div className='flex  mt-2 gap-1'>
                 <div>
                     <img src={detail.urls.small}
-                        alt="small image"
+                        alt="product"
                         loading='lazy'
                     />
                 </div>
                 <div>
                     <img src={detail.urls.small}
-                        alt="small image"
+                        alt="product"
                         loading='lazy'
                     />
                 </div>
@@ -35,11 +35,13 @@ const ProductImageComp = ({ detail }) => {
             <div className='mt-2 flex'>
                 <img src={detail.urls.regular}
                     loading='lazy'
+                    alt="product"
                 />
             </div>
             <div className='mt-2'>
                 <img src={detail.urls.regular}
                     loading='lazy'
+                    alt="product"
                 />
             </div>
             <ProductNote />

@@ -6,13 +6,13 @@ const MobileCarouselComp = ({ detail }) => {
     return (
         <Carousel>
             <div>
-                <img src={detail.urls.small} />
+                <img src={detail.urls.small} alt="mobile carousel" />
             </div>
             <div>
-                <img src={detail.urls.small} />
+                <img src={detail.urls.small} alt="mobile carousel" />
             </div>
             <div>
-                <img src={detail.urls.small} />
+                <img src={detail.urls.small} alt="mobile carousel" />
             </div>
         </Carousel>
     )
