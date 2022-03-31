@@ -5,20 +5,19 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
-const ProductTabs = () => {
-    const [value, setValue] = useState('1')
-    const handleChange = (event, newValue) => {
+const ProductTabsComp = () => {
+    const [value, setValue] = useState("1")
+    const handleChange = (event,newValue) => {
         setValue(newValue);
     };
     return (
         <Box sx={{ marginLeft: '10px', width: '25%', typography: 'body1' }} className='hidden md:block min-h-screen fixed'>
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 0, borderColor: 'divider' }}>
-                    <TabList onChange={handleChange} indicatorColor="white" textColor="inherit">
+                    <TabList onChange={handleChange} indicatorColor="" textColor="inherit">
                         <Tab label="DETAILS" value="1" />
                         <Tab label="DELIVERY" value="2" />
                         <Tab label="FIT" value="3" />
-                        {/* <Tab label="SHARE" value="4" /> */}
                     </TabList>
                 </Box>
                 <TabPanel value="1">
@@ -37,10 +36,10 @@ const ProductTabs = () => {
                 </TabPanel>
                 <TabPanel value="2"> <p className='text-sm font-normal text-black leading-normal '>DELIVERY</p></TabPanel>
                 <TabPanel value="3"> <p className='text-sm font-normal text-black leading-normal '>FIT</p></TabPanel>
-                {/* <TabPanel value="4"> <p className='text-sm font-normal text-black leading-normal '>SHARE</p></TabPanel> */}
             </TabContext>
         </Box>
     )
 }
 
+export const ProductTabs = React.memo(ProductTabsComp)
 export default ProductTabs

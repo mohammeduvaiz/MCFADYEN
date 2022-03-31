@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaBars, FaTimes, FaSistrix, FaShoppingBasket, FaUser } from 'react-icons/fa'
 
-const Header = () => {
+const HeaderComp = ({ cartValue }) => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   const MenuItems = [
@@ -28,8 +28,8 @@ const Header = () => {
 
         {/* menu */}
         <ul className='hidden md:flex items-center py-2  justify-center p-3  ml-2 '>
-          {MenuItems.map(menu => (
-            <li className='px-3 uppercase text-sm font-normal text-black'>
+          {MenuItems.map((menu, index) => (
+            <li key={index} className='px-3 uppercase text-sm font-normal text-black'>
               {menu.name}
             </li>
           ))}
@@ -43,8 +43,8 @@ const Header = () => {
               : 'absolute top-0 left-0 w-full h-[100vh] bg-[#fff] flex flex-col justify-center items-center'
           }
         >
-          {MenuItems.map(menu => (
-            <li className='py-3 text-sm'>
+          {MenuItems.map((menu, index) => (
+            <li className='py-3 text-sm' key={index}>
               {menu.name}
             </li>
           ))}
@@ -53,7 +53,7 @@ const Header = () => {
         {/* Right side of header*/}
         <div className='flex items-center space-x-4 justify-end text-gray-800  ' >
           <FaSistrix />
-          <FaShoppingBasket />
+          <FaShoppingBasket /> {cartValue}
           <FaUser className='hidden md:inline' />
 
           {/* Hamburger */}
@@ -67,4 +67,5 @@ const Header = () => {
   )
 }
 
+export const Header = React.memo(HeaderComp)
 export default Header

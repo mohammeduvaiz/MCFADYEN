@@ -1,11 +1,11 @@
-import React, { useEffect, Suspense } from 'react'
+import React, { useEffect } from 'react'
 import ProductTabs from '../components/ProductTabs'
 import ProductCard from '../components/ProductCard'
-// import ProductImage from '../components/ProductImage'
+import ProductImage from '../components/ProductImage'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductDetails } from '../slice/product'
-const ProductImage = React.lazy(() => import("../components/ProductImage"))
-const ProductDetails = () => {
+import ProductNote from '../components/ProductNote'
+const ProductDetailsComp = ({ addToCart }) => {
   const { productDetails } = useSelector((state) => state.product)
   const detail = productDetails[0];
   const dispatch = useDispatch()
@@ -23,14 +23,14 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className='flex-col md:flex mt-20 '>
-      <ProductTabs />
-      <Suspense fallback={<p>Loading....</p>}>
+    <>
+      <div className='flex-col md:flex mt-20 '>
+        <ProductTabs />
         <ProductImage detail={detail} />
-      </Suspense>
-      <ProductCard detail={detail} />
-    </div>
+        <ProductCard detail={detail} addToCart={addToCart} />
+      </div>
+    </>
   )
 }
-
+export const ProductDetails = React.memo(ProductDetailsComp)
 export default ProductDetails

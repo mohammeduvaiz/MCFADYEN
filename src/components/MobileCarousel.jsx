@@ -1,66 +1,29 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+const MobileCarouselComp = ({ detail }) => {
 
-const MobileCarousel = () => {
     return (
-        <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
-            <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-                <button
-                    type="button"
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                ></button>
-                <button
-                    type="button"
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                ></button>
-                <button
-                    type="button"
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                ></button>
+        <div id="default-carousel" class="relative" data-carousel="static">
+            <div class="overflow-hidden relative h-56 rounded-lg ">
+                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item>
+                    <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                    <img src={detail.urls.small} class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="image" />
+                </div>
+                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item>
+                    <img src={detail.urls.small} class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..." />
+                </div>
+                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item>
+                    <img src={detail.urls.small} class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..." />
+                </div>
             </div>
-            <div class="carousel-inner relative w-full overflow-hidden">
-                <div class="carousel-item active relative float-left w-full">
-                    <img
-                        src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-                        class="block w-full"
-                        alt="..."
-                    />
-                    <div class="carousel-caption hidden md:block absolute text-center">
-                        <h5 class="text-xl">First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item relative float-left w-full">
-                    <img
-                        src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-                        class="block w-full"
-                        alt="..."
-                    />
-                    <div class="carousel-caption hidden md:block absolute text-center">
-                        <h5 class="text-xl">Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item relative float-left w-full">
-                    <img
-                        src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-                        class="block w-full"
-                        alt="..."
-                    />
-                    <div class="carousel-caption hidden md:block absolute text-center">
-                        <h5 class="text-xl">Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>  
+            <div class="flex absolute bottom-4 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                <button type="button" class="w-6 h-2 rounded-md bg-white dark:bg-gray-800" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-6 h-2 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-6 h-2 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            </div>
         </div>
     )
 }
+
+export const MobileCarousel = React.memo(MobileCarouselComp)
 export default MobileCarousel

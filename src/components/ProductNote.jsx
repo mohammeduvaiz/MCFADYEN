@@ -1,8 +1,13 @@
 import React from 'react'
 
-const ProductNote = () => {
+const ProductNoteComp = () => {
     return (
-        <div className='w-[490px] flex flex-col mt-10 pb-10 '>
+        <div className='w-full md:w-[480px] flex flex-col mt-10 pb-10 '>
+            <div className='flex mt-10 px-4 mx-auto my-auto'>
+                <p className='uppercase underline font-normal text-sm p-2'>JONATHAN SIMKHAI</p>
+                <p className='uppercase underline font-normal text-sm p-2'>BLAZERS</p>
+                <p className='uppercase underline font-normal text-sm p-2'>VISCOSE</p>
+            </div>
             <h1 className='uppercase font-bold text-sm text-center mt-4'> a note from the editor</h1>
             <p className='font-normal text-2xl text-center'>
                 The Forte Lurex Linen Viscose Jacket in Mother of Pearl
@@ -17,4 +22,5 @@ const ProductNote = () => {
     )
 }
 
+export const ProductNote = React.memo(ProductNoteComp)
 export default ProductNote

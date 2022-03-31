@@ -10,8 +10,10 @@ export const getProductDetails = createAsyncThunk(
     }
 )
 
+
 const initialState = {
-    productDetails: []
+    productDetails: [],
+    productCart: []
 }
 
 const productSlice = createSlice({
@@ -21,7 +23,7 @@ const productSlice = createSlice({
         [getProductDetails.fulfilled]: (state, action) => {
             state.productDetails = action.payload
             console.log(action.payload)
-        }
+        },
     }
 })
 
